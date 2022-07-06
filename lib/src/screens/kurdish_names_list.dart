@@ -26,8 +26,6 @@ class _KurdishNamesListState extends State<KurdishNamesList> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // filterWidget("title", _kurdishNamesService.selectLimit,
-                  //     _kurdishNamesService.limitItems),
                   Column(
                     children: [
                       const Text(
@@ -147,32 +145,6 @@ class _KurdishNamesListState extends State<KurdishNamesList> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget filterWidget(
-      String title, String value, List<DropdownMenuItem<String>> menuItems) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        DropdownButton(
-          value: value,
-          items: menuItems,
-          onChanged: (String? val) {
-            setState(() {
-              _kurdishNamesService.selectLimit = val!;
-
-              //  print(value);
-            });
-          },
-        ),
-      ],
     );
   }
 }
